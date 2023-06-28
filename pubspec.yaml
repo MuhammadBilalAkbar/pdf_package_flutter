@@ -1,0 +1,32 @@
+name: pdf_package_flutter
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  # create pdf document
+  pdf: ^3.10.4
+
+  # save pdf document in local storage
+  path_provider: ^2.0.15
+
+  # open pdf document
+  open_file: ^3.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/img_1.png
+    - assets/img_2.png
