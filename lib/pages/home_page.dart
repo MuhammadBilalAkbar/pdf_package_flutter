@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'api/simple_pdf_api.dart';
-import 'api/paragraph_pdf_api.dart';
-import 'api/table_pdf_api.dart';
-import 'api/image_pdf_api.dart';
+import '../api/simple_pdf_api.dart';
+import '../api/paragraph_pdf_api.dart';
+import '../api/table_pdf_api.dart';
+import '../api/image_pdf_api.dart';
 
 import '/save_and_open_pdf.dart';
 

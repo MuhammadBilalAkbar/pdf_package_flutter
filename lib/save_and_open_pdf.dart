@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart';
@@ -10,10 +11,10 @@ class SaveAndOpenDocument {
     // Document is from pdf widgets.
     required Document pdf,
   }) async {
-    final root = await getApplicationDocumentsDirectory();
-    final file = File('${root.path}/$name');
+    final root = Platform.isAndroid ? await getExternalStorageDirectory() : await getApplicationDocumentsDirectory();
+    final file = File('${root!.path}/$name');
     await file.writeAsBytes(await pdf.save());
-    print('${root.path}/$name');
+    debugPrint('${root.path}/$name');
     return file;
   }
 

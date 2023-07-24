@@ -261,7 +261,7 @@ directory.
       SaveAndOpenDocument class. `saveDocument`  accepts pdfName and pdf itself.
     - `Page()` widget has many properties.
 
-      ![](page_properties.png)
+      ![](properties/page_properties.png)
         - `build` is required property and it builds the whole widgets of pdf document. `build` is
           returning a single widget centered column with two text widgets as its children.
         - Other optional properties are `pageTheme`, `pageFormat`, `theme`, `orientation`
@@ -312,7 +312,7 @@ class SimplePdfApi {
       SaveAndOpenDocument class. `saveDocument`  accepts pdfName and pdf itself.
     - `MultiPage()` widget has many properties.
 
-      ![](multipage_properties.png)
+      ![](properties/multipage_properties.png)
         - Optional properties are `pageTheme`, `pageFormat`, `theme`, `orientation`, `textDirection`
           , `header`, `footer`, `maxPages` etc.
         - `build` is required property and it builds the whole widgets of pdf document. `build` is
@@ -410,7 +410,7 @@ class SimplePdfApi {
    page.
     - `TableHelper.fromTextArray()` has many properties:
 
-   ![](table_properties.png)
+   ![](properties/table_properties.png)
     - `data` is required property of table which is given by list of users. List of users is then
       converted to `List<List<Object>>` with the help of `map.toList()`.
     - `headers` is list of dynamics. I have given here list of string as header.
