@@ -226,10 +226,12 @@ class SaveAndOpenDocument {
     // Document is from pdf widgets.
     required Document pdf,
   }) async {
-    final root = await getApplicationDocumentsDirectory();
-    final file = File('${root.path}/$name');
+    final root = Platform.isAndroid
+        ? await getExternalStorageDirectory()
+        : await getApplicationDocumentsDirectory();
+    final file = File('${root!.path}/$name');
     await file.writeAsBytes(await pdf.save());
-    print('${root.path}/$name');
+    debugPrint('${root.path}/$name');
     return file;
   }
 
@@ -238,10 +240,11 @@ class SaveAndOpenDocument {
     await OpenFile.open(url);
   }
 }
-``` 
+```
 
 `saveDocument()` method requires pdf document to save it and its name. It uses `path_provider`
-package to save pdf document in application directory and returns it(pdf document).
+package to save pdf document in application directory (`getExternalStorageDirectory` for android
+and `getApplicationDocumentsDirectory` for iOS) and returns it(pdf document).
 
 `openPdf()` method requires file to open it with its path where it is stored in application
 directory.

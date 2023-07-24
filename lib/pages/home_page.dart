@@ -11,16 +11,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Pdf Package Flutter Demo'),
-        ),
+        appBar: AppBar(title: const Text('Pdf Package Flutter')),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 onPressed: () async {
-                  final simplePdfFile = await SimplePdfApi.generateSimpleTextPdf(
+                  final simplePdfFile =
+                      await SimplePdfApi.generateSimpleTextPdf(
                     'Sample Text',
                     'Flutter Developer',
                   );
